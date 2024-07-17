@@ -1,15 +1,25 @@
-export default function Options({option ,correctoption}) {
-    console.log(correctoption)
-    function handleClick(e) {
-        console.log(e)
-        /* if (option[correctoption] ===  ) */
-        
+import React, { useState } from 'react';
+
+
+export default function Options({ questions, dispatch, answer }) {
+    const hasAnswered = answer !== null;
+    
+    function handleClick(index) {
+        dispatch({type:'newAnswer',payload: index})
     }
-    return <div className="options">
-        {
-            option.map((el) => (
-                <button className="btn btn-option" key={el} onClick={(e)=>{handleClick(e)}}> { el}</button>
-            ))
-        }
-    </div>
+
+    return (
+        <div className="options">
+            {questions.options.map((el, index) => (
+                <button
+                    className={`btn btn-option ${index == answer ? "answer" : ""} ${hasAnswered ? index == questions.correctOption ? 'correct' : 'wrong':""}`}
+                    key={index}
+                    disabled={hasAnswered}
+                    onClick={() => handleClick(index)}
+                >
+                    {el}
+                </button>
+            ))}
+        </div>
+    );
 }
