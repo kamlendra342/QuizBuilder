@@ -39,13 +39,13 @@ function Reducer(state, action) {
       return { ...state, index: state.index + 1, answer: null }
     case "finish":
       return { ...state, status: "finish", highscore: state.points > state.highscore ? state.points : state.highscore }
-      case "restart":
+    case "restart":
       return {
         ...state,status:"ready",
         answer: null,
         index: 0,
         points: 0,
-        SecoundRemaining:10,
+        SecoundRemaining:360,
       }
       case "tick":
         return { ...state, SecoundRemaining:state.SecoundRemaining-1,status : state.SecoundRemaining <= 0 ? "finish" : state.status,highscore: state.points > state.highscore ? state.points : state.highscore}
