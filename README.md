@@ -1,6 +1,6 @@
-# 🧩 QuizBuilder
+# 🧩 Quizzy
 
-QuizBuilder is an intuitive tool that automates the creation of quizzes by transforming raw questions into a fully designed and interactive quiz interface. Perfect for educators and professionals looking to create engaging assessments quickly.
+Quizzy is an intuitive tool that automates the creation of quizzes by transforming raw questions into a fully designed and interactive quiz interface. Perfect for educators and professionals looking to create engaging assessments quickly.
 
 ## 📚 Table of Contents
 - [Introduction](#introduction)
